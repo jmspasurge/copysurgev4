@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import { 
   Upload, 
   Link2, 
@@ -36,7 +37,12 @@ import {
   Sparkles,
   Database
 } from 'lucide-react';
-
+declare global {
+  interface Window {
+    mammoth: any;
+    jspdf: any;
+  }
+}
 const loadExternalLibraries = () => {
   return new Promise((resolve) => {
     let mammothLoaded = !!window.mammoth;
